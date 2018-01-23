@@ -4,6 +4,8 @@ date: 2018-01-23 21:43:35
 tags: 
 - spark 
 - scala
+categories:
+- 学习
 ---
 ## Spark运行环境和版本对应
 ### java

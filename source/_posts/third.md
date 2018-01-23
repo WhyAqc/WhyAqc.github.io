@@ -4,6 +4,8 @@ date: 2018-01-23 21:55:39
 tags:
 - spark
 - scala
+categories:
+- 学习
 ---
 
 # 两种数组

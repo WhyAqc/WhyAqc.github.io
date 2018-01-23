@@ -4,6 +4,8 @@ date: 2018-01-23 21:54:35
 tags:
 - spark
 - scala
+categories:
+- 学习
 ---
 
 [两类常用算子示意图](http://note.youdao.com/noteshare?id=0778b37ae517600f91d6c8a9b7d9e02f&sub=BDB9D1C094604D0BA3C71DE3FE72C930)
