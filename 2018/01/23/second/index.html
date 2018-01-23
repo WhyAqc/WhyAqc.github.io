@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="spark,scala," />
 
 
 
@@ -94,17 +94,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="两类常用算子示意图 RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集transformation（转换）算子这种变换并不触发提交作业，完成作业中间过程处理。Transformation属于延迟计算，当一个RDD转换成另一个RDD时==并没有立即进行转换==，仅仅是记住了数据集的逻辑操作  map flat">
+<meta name="keywords" content="spark,scala">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/01/23/hello-world/index.html">
+<meta property="og:title" content="Spark、Scala学习（1）——spark算子">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/second/index.html">
 <meta property="og:site_name" content="why1024的个人博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="两类常用算子示意图 RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集transformation（转换）算子这种变换并不触发提交作业，完成作业中间过程处理。Transformation属于延迟计算，当一个RDD转换成另一个RDD时==并没有立即进行转换==，仅仅是记住了数据集的逻辑操作  map flat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-23T09:12:00.127Z">
+<meta property="og:updated_time" content="2018-01-23T13:56:03.895Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Spark、Scala学习（1）——spark算子">
+<meta name="twitter:description" content="两类常用算子示意图 RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集transformation（转换）算子这种变换并不触发提交作业，完成作业中间过程处理。Transformation属于延迟计算，当一个RDD转换成另一个RDD时==并没有立即进行转换==，仅仅是记住了数据集的逻辑操作  map flat">
 
 
 
@@ -133,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/23/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/second/"/>
 
 
 
 
 
-  <title>Hello World | why1024的个人博客</title>
+  <title>Spark、Scala学习（1）——spark算子 | why1024的个人博客</title>
   
 
 
@@ -272,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/second/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="why1024">
@@ -289,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Spark、Scala学习（1）——spark算子</h1>
         
 
         <div class="post-meta">
@@ -301,7 +302,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T17:12:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T21:54:35+08:00">
                 2018-01-23
               </time>
             
@@ -320,8 +321,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/23/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/23/hello-world/" itemprop="commentCount"></span>
+                <a href="/2018/01/23/second/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/23/second/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -349,15 +350,27 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p><a href="http://note.youdao.com/noteshare?id=0778b37ae517600f91d6c8a9b7d9e02f&amp;sub=BDB9D1C094604D0BA3C71DE3FE72C930" target="_blank" rel="noopener">两类常用算子示意图</a></p>
+<h5 id="RDD：弹性分布式数据集，是一种特殊集合-‚-支持多种来源-‚-有容错机制-‚-可以被缓存-‚-支持并行操作，一个RDD代表一个分区里的数据集"><a href="#RDD：弹性分布式数据集，是一种特殊集合-‚-支持多种来源-‚-有容错机制-‚-可以被缓存-‚-支持并行操作，一个RDD代表一个分区里的数据集" class="headerlink" title="RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集"></a>RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集</h5><h3 id="transformation（转换）算子"><a href="#transformation（转换）算子" class="headerlink" title="transformation（转换）算子"></a>transformation（转换）算子</h3><p>这种变换并不触发提交作业，完成作业中间过程处理。<br>Transformation属于延迟计算，当一个RDD转换成另一个RDD时==并没有立即进行转换==，仅仅是记住了数据集的逻辑操作</p>
+<ul>
+<li>map</li>
+<li>flatMap</li>
+<li>distinct</li>
+<li>coalesce<blockquote>
+<p><strong>def coalesce(numPartitions: Int, shuffle: Boolean = false)(implicit ord: Ordering[T] = null): RDD[T]</strong><br>将RDD的分区数量重新调整为numPartitions个,如果shuffle为true，分区数量可以大于原值。</p>
+</blockquote>
+</li>
+<li>==repartition==<blockquote>
+<p><strong>def repartition(numPartitions: Int)(implicit ord: Ordering[String]): org.apache.spark.rdd.RDD[String]</strong><br>相当于 coalesce 的shuttle 为true<br>*</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="action（执行）算子"><a href="#action（执行）算子" class="headerlink" title="action（执行）算子"></a>action（执行）算子</h3><p>这类算子会触发 SparkContext 提交 Job 作业。<br>Action触发Spark作业的运行，真正==触发转换算子的计算==</p>
+<h5 id="从小方向来说，Spark-算子大致可以分为以下三类"><a href="#从小方向来说，Spark-算子大致可以分为以下三类" class="headerlink" title="从小方向来说，Spark 算子大致可以分为以下三类:"></a>从小方向来说，Spark 算子大致可以分为以下三类:</h5><ol>
+<li>Value数据类型的Transformation算子，这种变换并不触发提交作业，针对处理的数据项是Value型的数据。</li>
+<li>Key-Value数据类型的Transfromation算子，这种变换并不触发提交作业，针对处理的数据项是Key-Value型的数据对。</li>
+<li>Action算子，这类算子会触发SparkContext提交Job作业。</li>
+</ol>
 
       
     </div>
@@ -373,6 +386,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/spark/" rel="tag"># spark</a>
+          
+            <a href="/tags/scala/" rel="tag"># scala</a>
+          
+        </div>
+      
 
       
       
@@ -382,14 +403,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/01/23/first/" rel="next" title="Spark、Scala学习（0）——搭建环境">
+                <i class="fa fa-chevron-left"></i> Spark、Scala学习（0）——搭建环境
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/23/first/" rel="prev" title="Spark、Scala学习（0）——搭建环境">
-                Spark、Scala学习（0）——搭建环境 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/23/third/" rel="prev" title="Spark、Scala学习（2）——scala数组">
+                Spark、Scala学习（2）——scala数组 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -420,8 +445,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2018/01/23/hello-world/"
-           data-title="Hello World" data-url="http://yoursite.com/2018/01/23/hello-world/">
+      <div class="ds-thread" data-thread-key="2018/01/23/second/"
+           data-title="Spark、Scala学习（1）——spark算子" data-url="http://yoursite.com/2018/01/23/second/">
       </div>
     
   </div>
@@ -519,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#RDD：弹性分布式数据集，是一种特殊集合-‚-支持多种来源-‚-有容错机制-‚-可以被缓存-‚-支持并行操作，一个RDD代表一个分区里的数据集"><span class="nav-number">1.</span> <span class="nav-text">RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transformation（转换）算子"><span class="nav-number"></span> <span class="nav-text">transformation（转换）算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#action（执行）算子"><span class="nav-number"></span> <span class="nav-text">action（执行）算子</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#从小方向来说，Spark-算子大致可以分为以下三类"><span class="nav-number">1.</span> <span class="nav-text">从小方向来说，Spark 算子大致可以分为以下三类:</span></a></li></ol></div>
             
 
           </div>

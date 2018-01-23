@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="spark,scala," />
 
 
 
@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="个人博客 科技 生活 吐槽">
-<meta property="og:type" content="website">
-<meta property="og:title" content="why1024的个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="两种数组 定长数组：Array变长数组：ArrayBuffer 知识点 提供初始值时不要使用new,复杂对象数组没有提供初始值时必须提供new  12scala&amp;gt; val numberArray = new Array[int](10)numberArray:Array[Int] = Array(null, null, null, null, null, null, null, null,">
+<meta name="keywords" content="spark,scala">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spark、Scala学习（2）——scala数组">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/third/index.html">
 <meta property="og:site_name" content="why1024的个人博客">
-<meta property="og:description" content="个人博客 科技 生活 吐槽">
+<meta property="og:description" content="两种数组 定长数组：Array变长数组：ArrayBuffer 知识点 提供初始值时不要使用new,复杂对象数组没有提供初始值时必须提供new  12scala&amp;gt; val numberArray = new Array[int](10)numberArray:Array[Int] = Array(null, null, null, null, null, null, null, null,">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-23T13:56:57.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="why1024的个人博客">
-<meta name="twitter:description" content="个人博客 科技 生活 吐槽">
+<meta name="twitter:title" content="Spark、Scala学习（2）——scala数组">
+<meta name="twitter:description" content="两种数组 定长数组：Array变长数组：ArrayBuffer 知识点 提供初始值时不要使用new,复杂对象数组没有提供初始值时必须提供new  12scala&amp;gt; val numberArray = new Array[int](10)numberArray:Array[Int] = Array(null, null, null, null, null, null, null, null,">
 
 
 
@@ -132,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/third/"/>
 
 
 
 
 
-  <title>why1024的个人博客</title>
+  <title>Spark、Scala学习（2）——scala数组 | why1024的个人博客</title>
   
 
 
@@ -163,9 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,9 +258,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -290,9 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/23/third/" itemprop="url">Spark、Scala学习（2）——scala数组</a></h1>
+          <h1 class="post-title" itemprop="name headline">Spark、Scala学习（2）——scala数组</h1>
         
 
         <div class="post-meta">
@@ -352,9 +350,7 @@
       
 
       
-        
-          
-            <h1 id="两种数组"><a href="#两种数组" class="headerlink" title="两种数组"></a>两种数组</h1><blockquote>
+        <h1 id="两种数组"><a href="#两种数组" class="headerlink" title="两种数组"></a>两种数组</h1><blockquote>
 <p>定长数组：Array<br>变长数组：ArrayBuffer</p>
 <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
 <li>提供初始值时不要使用new,复杂对象数组没有提供初始值时必须提供new</li>
@@ -381,8 +377,6 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//toString()方法</span><br><span class="line">scala&gt; intArr.toString()</span><br><span class="line">res94: String = [I@141aba8</span><br><span class="line"></span><br><span class="line">//mkString()方法</span><br><span class="line">scala&gt; intArr.mkString(&quot;,&quot;)</span><br><span class="line">res96: String = 1,2,3,4,5,6,7,8,9,10</span><br><span class="line"></span><br><span class="line">scala&gt; intArr.mkString(&quot;&lt;&quot;,&quot;,&quot;,&quot;&gt;&quot;)</span><br><span class="line">res97: String = &lt;1,2,3,4,5,6,7,8,9,10&gt;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -397,303 +391,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/second/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="why1024">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="why1024的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/23/second/" itemprop="url">Spark、Scala学习（1）——spark算子</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T21:54:35+08:00">
-                2018-01-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/spark/" rel="tag"># spark</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/23/second/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/23/second/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/scala/" rel="tag"># scala</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://note.youdao.com/noteshare?id=0778b37ae517600f91d6c8a9b7d9e02f&amp;sub=BDB9D1C094604D0BA3C71DE3FE72C930" target="_blank" rel="noopener">两类常用算子示意图</a></p>
-<h5 id="RDD：弹性分布式数据集，是一种特殊集合-‚-支持多种来源-‚-有容错机制-‚-可以被缓存-‚-支持并行操作，一个RDD代表一个分区里的数据集"><a href="#RDD：弹性分布式数据集，是一种特殊集合-‚-支持多种来源-‚-有容错机制-‚-可以被缓存-‚-支持并行操作，一个RDD代表一个分区里的数据集" class="headerlink" title="RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集"></a>RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集</h5><h3 id="transformation（转换）算子"><a href="#transformation（转换）算子" class="headerlink" title="transformation（转换）算子"></a>transformation（转换）算子</h3><p>这种变换并不触发提交作业，完成作业中间过程处理。<br>Transformation属于延迟计算，当一个RDD转换成另一个RDD时==并没有立即进行转换==，仅仅是记住了数据集的逻辑操作</p>
-<ul>
-<li>map</li>
-<li>flatMap</li>
-<li>distinct</li>
-<li>coalesce<blockquote>
-<p><strong>def coalesce(numPartitions: Int, shuffle: Boolean = false)(implicit ord: Ordering[T] = null): RDD[T]</strong><br>将RDD的分区数量重新调整为numPartitions个,如果shuffle为true，分区数量可以大于原值。</p>
-</blockquote>
-</li>
-<li>==repartition==<blockquote>
-<p><strong>def repartition(numPartitions: Int)(implicit ord: Ordering[String]): org.apache.spark.rdd.RDD[String]</strong><br>相当于 coalesce 的shuttle 为true<br>*</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="action（执行）算子"><a href="#action（执行）算子" class="headerlink" title="action（执行）算子"></a>action（执行）算子</h3><p>这类算子会触发 SparkContext 提交 Job 作业。<br>Action触发Spark作业的运行，真正==触发转换算子的计算==</p>
-<h5 id="从小方向来说，Spark-算子大致可以分为以下三类"><a href="#从小方向来说，Spark-算子大致可以分为以下三类" class="headerlink" title="从小方向来说，Spark 算子大致可以分为以下三类:"></a>从小方向来说，Spark 算子大致可以分为以下三类:</h5><ol>
-<li>Value数据类型的Transformation算子，这种变换并不触发提交作业，针对处理的数据项是Value型的数据。</li>
-<li>Key-Value数据类型的Transfromation算子，这种变换并不触发提交作业，针对处理的数据项是Key-Value型的数据对。</li>
-<li>Action算子，这类算子会触发SparkContext提交Job作业。</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/first/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="why1024">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="why1024的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/23/first/" itemprop="url">Spark、Scala学习（0）——搭建环境</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T21:43:35+08:00">
-                2018-01-23
-              </time>
+              <a href="/2018/01/23/second/" rel="next" title="Spark、Scala学习（1）——spark算子">
+                <i class="fa fa-chevron-left"></i> Spark、Scala学习（1）——spark算子
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/23/first/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/23/first/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h2 id="Spark运行环境和版本对应"><a href="#Spark运行环境和版本对应" class="headerlink" title="Spark运行环境和版本对应"></a>Spark运行环境和版本对应</h2><h3 id="java"><a href="#java" class="headerlink" title="java"></a>java</h3><blockquote>
-<p>1.7</p>
-<h3 id="scala"><a href="#scala" class="headerlink" title="scala"></a>scala</h3><p>2.10.6</p>
-<blockquote>
-<p><strong>注意scala与spark的版本要对应好，不然会报错，如下。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Error:scalac: Error: object BooleanRef does not have a member create</span><br><span class="line">scala.reflect.internal.FatalError: object BooleanRef does not have a member create</span><br></pre></td></tr></table></figure></p>
-<p><strong>其中，BooleanRef 会各种变，什么Long、Value等，都是因为版本没对应!百度好spark支持的scala版本最重要</strong></p>
-<h3 id="hadoop"><a href="#hadoop" class="headerlink" title="hadoop"></a>hadoop</h3><p>1.6.0<br>根据集群版本选择</p>
-<h3 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h3><p>1.6.3<br>spark官网在下载时很人性的给出了spark和hadoop的版本对应</p>
-</blockquote>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -703,148 +432,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="why1024">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="why1024的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/23/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T17:12:00+08:00">
-                2018-01-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/01/23/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/23/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -852,6 +444,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/01/23/third/"
+           data-title="Spark、Scala学习（2）——scala数组" data-url="http://yoursite.com/2018/01/23/third/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -872,8 +472,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -926,6 +535,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#两种数组"><span class="nav-number">1.</span> <span class="nav-text">两种数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-number">1.1.</span> <span class="nav-text">知识点</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1039,10 +664,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
