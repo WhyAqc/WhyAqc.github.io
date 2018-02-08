@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="spark,scala," />
+  <meta name="keywords" content="工作总结," />
 
 
 
@@ -94,18 +94,20 @@
 
 
 
-<meta name="description" content="两类常用算子示意图 RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集transformation（转换）算子这种变换并不触发提交作业，完成作业中间过程处理。Transformation属于延迟计算，当一个RDD转换成另一个RDD时并没有立即进行转换，仅仅是记住了数据集的逻辑操作  map flatMap">
-<meta name="keywords" content="spark,scala">
+<meta name="description" content="本文为工作总结，大致记录参与的项目内容、技术要点和ToFix已屏蔽所有隐私信息，如有其它不妥，请联系作者修改。  1. 翻译app与翻译词典1.1 原始日志解析  执行方案：   用scala编写sparkApplication，打包后在集群上spark-submit 提交   工作要点： ① 主子ID读配置文件匹配。 ② url解码、AES解密、兼容Android、iOS不同日志的格式。 ③">
+<meta name="keywords" content="工作总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spark、Scala学习（1）——spark算子">
-<meta property="og:url" content="http://yoursite.com/2018/01/23/second/index.html">
+<meta property="og:title" content="我爱搜狗大数据">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/sogouSummary/index.html">
 <meta property="og:site_name" content="why1024的个人博客">
-<meta property="og:description" content="两类常用算子示意图 RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集transformation（转换）算子这种变换并不触发提交作业，完成作业中间过程处理。Transformation属于延迟计算，当一个RDD转换成另一个RDD时并没有立即进行转换，仅仅是记住了数据集的逻辑操作  map flatMap">
+<meta property="og:description" content="本文为工作总结，大致记录参与的项目内容、技术要点和ToFix已屏蔽所有隐私信息，如有其它不妥，请联系作者修改。  1. 翻译app与翻译词典1.1 原始日志解析  执行方案：   用scala编写sparkApplication，打包后在集群上spark-submit 提交   工作要点： ① 主子ID读配置文件匹配。 ② url解码、AES解密、兼容Android、iOS不同日志的格式。 ③">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-08T04:28:57.575Z">
+<meta property="og:image" content="http://yoursite.com/2018/01/23/sogouSummary/DAG.png">
+<meta property="og:updated_time" content="2018-02-08T09:40:51.620Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spark、Scala学习（1）——spark算子">
-<meta name="twitter:description" content="两类常用算子示意图 RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集transformation（转换）算子这种变换并不触发提交作业，完成作业中间过程处理。Transformation属于延迟计算，当一个RDD转换成另一个RDD时并没有立即进行转换，仅仅是记住了数据集的逻辑操作  map flatMap">
+<meta name="twitter:title" content="我爱搜狗大数据">
+<meta name="twitter:description" content="本文为工作总结，大致记录参与的项目内容、技术要点和ToFix已屏蔽所有隐私信息，如有其它不妥，请联系作者修改。  1. 翻译app与翻译词典1.1 原始日志解析  执行方案：   用scala编写sparkApplication，打包后在集群上spark-submit 提交   工作要点： ① 主子ID读配置文件匹配。 ② url解码、AES解密、兼容Android、iOS不同日志的格式。 ③">
+<meta name="twitter:image" content="http://yoursite.com/2018/01/23/sogouSummary/DAG.png">
 
 
 
@@ -134,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/23/second/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/sogouSummary/"/>
 
 
 
 
 
-  <title>Spark、Scala学习（1）——spark算子 | why1024的个人博客</title>
+  <title>我爱搜狗大数据 | why1024的个人博客</title>
   
 
 
@@ -273,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/second/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/sogouSummary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="why1024">
@@ -290,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spark、Scala学习（1）——spark算子</h1>
+          <h1 class="post-title" itemprop="name headline">我爱搜狗大数据</h1>
         
 
         <div class="post-meta">
@@ -362,27 +364,92 @@
       
 
       
-        <p><a href="http://note.youdao.com/noteshare?id=0778b37ae517600f91d6c8a9b7d9e02f&amp;sub=BDB9D1C094604D0BA3C71DE3FE72C930" target="_blank" rel="noopener">两类常用算子示意图</a></p>
-<h5 id="RDD：弹性分布式数据集，是一种特殊集合-‚-支持多种来源-‚-有容错机制-‚-可以被缓存-‚-支持并行操作，一个RDD代表一个分区里的数据集"><a href="#RDD：弹性分布式数据集，是一种特殊集合-‚-支持多种来源-‚-有容错机制-‚-可以被缓存-‚-支持并行操作，一个RDD代表一个分区里的数据集" class="headerlink" title="RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集"></a>RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集</h5><h3 id="transformation（转换）算子"><a href="#transformation（转换）算子" class="headerlink" title="transformation（转换）算子"></a>transformation（转换）算子</h3><p>这种变换并不触发提交作业，完成作业中间过程处理。<br>Transformation属于延迟计算，当一个RDD转换成另一个RDD时<code>并没有立即进行转换</code>，仅仅是记住了数据集的逻辑操作</p>
+        <blockquote>
+<p>本文为工作总结，大致记录参与的项目内容、技术要点和ToFix<br>已屏蔽所有隐私信息，如有其它不妥，请联系作者修改。</p>
+</blockquote>
+<h2 id="1-翻译app与翻译词典"><a href="#1-翻译app与翻译词典" class="headerlink" title="1. 翻译app与翻译词典"></a>1. 翻译app与翻译词典</h2><p><strong>1.1 原始日志解析</strong></p>
 <ul>
-<li>map</li>
-<li>flatMap</li>
-<li>distinct</li>
-<li>coalesce<blockquote>
-<p><strong>def coalesce(numPartitions: Int, shuffle: Boolean = false)(implicit ord: Ordering[T] = null): RDD[T]</strong><br>将RDD的分区数量重新调整为numPartitions个,如果shuffle为true，分区数量可以大于原值。</p>
-</blockquote>
-</li>
-<li><code>repartition</code><blockquote>
-<p><strong>def repartition(numPartitions: Int)(implicit ord: Ordering[String]): org.apache.spark.rdd.RDD[String]</strong><br>相当于 coalesce 的shuttle 为true</p>
-</blockquote>
+<li>执行方案：</li>
+</ul>
+<ul>
+<li>用scala编写<code>sparkApplication</code>，打包后在集群上<code>spark-submit</code> 提交</li>
+</ul>
+<ul>
+<li>工作要点：<ul>
+<li>① 主子ID读配置文件匹配。</li>
+<li>② url解码、AES解密、兼容Android、iOS不同日志的格式。</li>
+<li>③ 自定义分隔符：字段分隔符、数组分隔符、map分隔符。</li>
+<li>④ RDD过滤错误输出。</li>
+</ul>
 </li>
 </ul>
-<h3 id="action（执行）算子"><a href="#action（执行）算子" class="headerlink" title="action（执行）算子"></a>action（执行）算子</h3><p>这类算子会触发 SparkContext 提交 Job 作业。<br>Action触发Spark作业的运行，真正<code>触发转换算子的计算</code></p>
-<h5 id="从小方向来说，Spark-算子大致可以分为以下三类"><a href="#从小方向来说，Spark-算子大致可以分为以下三类" class="headerlink" title="从小方向来说，Spark 算子大致可以分为以下三类:"></a>从小方向来说，Spark 算子大致可以分为以下三类:</h5><ol>
-<li>Value数据类型的Transformation算子，这种变换并不触发提交作业，针对处理的数据项是Value型的数据。</li>
-<li>Key-Value数据类型的Transfromation算子，这种变换并不触发提交作业，针对处理的数据项是Key-Value型的数据对。</li>
-<li>Action算子，这类算子会触发SparkContext提交Job作业。</li>
-</ol>
+<p><strong>1.2 hive统计</strong></p>
+<ul>
+<li>执行方案：<ul>
+<li>用hive SQL对照主子ID分别对count和sum类型做统计</li>
+</ul>
+</li>
+<li>工作要点：<ul>
+<li>① 主子ID配置文件内部表。</li>
+<li>② 根据需要展现的click、uv数据进行统计。</li>
+</ul>
+</li>
+</ul>
+<p><strong>1.3 后续</strong></p>
+<ul>
+<li><p>业务埋点增加要改的地方：</p>
+<ul>
+<li>① 日志解析依赖的本地配置更新。</li>
+<li>② hive统计依赖的内部表需要更新。</li>
+<li>③ 上层展示所需的mysql表需要更新。</li>
+</ul>
+</li>
+<li><p>日志兼容性：</p>
+<ul>
+<li>兼容了字段缺失和至多两次URLdecode。其他视为错误日志，输出到同目录的错误标识文件，方便查错。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-问答数据解析"><a href="#2-问答数据解析" class="headerlink" title="2. 问答数据解析"></a>2. 问答数据解析</h2><ul>
+<li>执行方案：用scala编写<code>sparkApplication</code>，解析python打的日志，打包在集群上用<code>spark-submit</code> 提交。</li>
+<li>工作要点：<ul>
+<li>① 字段按序解析</li>
+<li>② 兼容字段内容缺失</li>
+<li>③ 解析错误的日志放到同目录下的错误标识文件，方便查错</li>
+</ul>
+</li>
+<li>后续优化：当前是将<code>log</code>字段展开为多个字段，后续考虑以K-V(map)形式存储，以便字段扩充</li>
+</ul>
+<hr>
+<h2 id="3-任务管理器、□□集群、□□集群监控"><a href="#3-任务管理器、□□集群、□□集群监控" class="headerlink" title="3. 任务管理器、□□集群、□□集群监控"></a>3. 任务管理器、□□集群、□□集群监控</h2><p><strong>3.0 执行的方案</strong></p>
+<ul>
+<li>这一部分的内容都是编写<code>Java</code>程序来做的；实时的数据通过<code>REST API</code>获取的；任务管理器的数据直接读的数据库。</li>
+<li>实时监控和守护进程：<ul>
+<li>①    java程序跑在虚机上；</li>
+<li>②    crontab每天上午10点执行java -jar /usr/why/TaskMonit/TaskStatistics.jar &gt;&gt; /usr/why/TaskMonit/stdio.log；</li>
+<li>③    at now 持续监控：java -jar /usr/why/EarthMonit/EarthStateMonit.jar.99 &gt;&gt; /usr/why/EarthMonit/StateMonitSTDIO.log 2&gt;&amp;1和java -jar /usr/why/EarthMonit/EarthTimeMonit.jar.99 &gt;&gt; /usr/why/EarthMonit/TimeMonitSTDIO.log 2&gt;&amp;1</li>
+</ul>
+</li>
+<li>监控数据存放在；</li>
+</ul>
+<p><strong>3.1 任务统计和各集群id关联对应</strong></p>
+<ul>
+<li>任务管理器任务的统计：每天上午10点统计昨天的任务。<ul>
+<li>统计项：task任务、job任务；</li>
+<li>数据来源：任务管理器的数据库。</li>
+</ul>
+</li>
+<li>集群任务的统计：统计8分钟之前完成的任务，一次统计5分钟时间段，实时监控。<ul>
+<li>统计项：集群任务；</li>
+<li>数据来源：集群的<code>RMServer REST API</code>。</li>
+</ul>
+</li>
+</ul>
+<p><strong>3.2 各阶段耗时监控（earth）</strong></p>
+<ul>
+<li>实时监控任务状态改变的方式，获取大致的耗时，<code>状态转移</code>图如下。<br><img src="DAG.png" alt=""></li>
+</ul>
 
       
     </div>
@@ -400,9 +467,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/spark/" rel="tag"># spark</a>
-          
-            <a href="/tags/scala/" rel="tag"># scala</a>
+            <a href="/tags/工作总结/" rel="tag"># 工作总结</a>
           
         </div>
       
@@ -415,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/23/sogouSummary/" rel="next" title="我爱搜狗大数据">
-                <i class="fa fa-chevron-left"></i> 我爱搜狗大数据
+              <a href="/2018/01/23/first/" rel="next" title="Spark、Scala学习（0）——搭建环境">
+                <i class="fa fa-chevron-left"></i> Spark、Scala学习（0）——搭建环境
               </a>
             
           </div>
@@ -425,8 +490,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/23/third/" rel="prev" title="Spark、Scala学习（2）——scala数组">
-                Spark、Scala学习（2）——scala数组 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/23/second/" rel="prev" title="Spark、Scala学习（1）——spark算子">
+                Spark、Scala学习（1）——spark算子 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -561,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#RDD：弹性分布式数据集，是一种特殊集合-‚-支持多种来源-‚-有容错机制-‚-可以被缓存-‚-支持并行操作，一个RDD代表一个分区里的数据集"><span class="nav-number">1.</span> <span class="nav-text">RDD：弹性分布式数据集，是一种特殊集合 ‚ 支持多种来源 ‚ 有容错机制 ‚ 可以被缓存 ‚ 支持并行操作，一个RDD代表一个分区里的数据集</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transformation（转换）算子"><span class="nav-number"></span> <span class="nav-text">transformation（转换）算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#action（执行）算子"><span class="nav-number"></span> <span class="nav-text">action（执行）算子</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#从小方向来说，Spark-算子大致可以分为以下三类"><span class="nav-number">1.</span> <span class="nav-text">从小方向来说，Spark 算子大致可以分为以下三类:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-翻译app与翻译词典"><span class="nav-number">1.</span> <span class="nav-text">1. 翻译app与翻译词典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-问答数据解析"><span class="nav-number">2.</span> <span class="nav-text">2. 问答数据解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-任务管理器、□□集群、□□集群监控"><span class="nav-number">3.</span> <span class="nav-text">3. 任务管理器、□□集群、□□集群监控</span></a></li></ol></div>
             
 
           </div>
