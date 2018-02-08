@@ -1,8 +1,8 @@
 ---
 title: Spark、Scala学习（0）——搭建环境
 date: 2018-01-23 21:43:35
-tags: 
-- spark 
+tags:
+- spark
 - scala
 categories:
 - 学习
